@@ -14,5 +14,14 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: "Build imagem docker"
+      uses: docker/build-push-action@v6
+      with:
+        context: /src
+        file: ./src/Dockerfile
+        push: true
+        tags: | 
+          caioturco/aula-primeira-pipeline:v${{ github.run_number }}
+          caioturco/aula-primeira-pipeline:latest
       
           
