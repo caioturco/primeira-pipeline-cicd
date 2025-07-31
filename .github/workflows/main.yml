@@ -33,8 +33,7 @@ jobs:
             uses: azure/k8s-set-context@v4
             with:
               method: kubeconfig
-              kubeconfig: <your kubeconfig>
-              context: ${{ secrets.K8S_CONFIG }}
+              kubeconfig: ${{ secrets.K8S_CONFIG }}
           - name: Deploy Aplicação
             uses: Azure/k8s-deploy@v5
             with:
