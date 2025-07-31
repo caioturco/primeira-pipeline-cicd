@@ -12,8 +12,8 @@ jobs:
           - name: Autenticação Docker Hub
             uses: docker/login-action@v3.1.0
             with:
-                username: caio.turco@hotmail.com #${{ secrets.DOCKERHUB_USERNAME }}
-                password: c410cc@@120589  #${{ secrets.DOCKERHUB_TOKEN }}
+                username: ${{ secrets.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
           - name: Build Imagem Docker
             uses: docker/build-push-action@v6
             with:
